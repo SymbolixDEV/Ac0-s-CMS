@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<cu3er>
+	<settings>
+		<auto_play>
+         <defaults symbol="circular" time="6" />
+         <tweenIn x="525" y="23" width="35" height="35" tint="0xFFFFFF" />
+        </auto_play>
+    	<prev_button>
+			<defaults round_corners="25,25,25,25" />
+			<tweenIn x="35" y="190" height="35" width="35"  time="0.5" />	
+			<tweenOver tint="0xFFFFFF" scaleX="1.0" scaleY="1.0"/>
+			<tweenOut tint="0x000000"  />
+		</prev_button>
+		
+    	<prev_symbol>
+		    <tweenIn x="35" y="190" time="0.5"  />	
+			<tweenOver tint="0x000000" />			
+		</prev_symbol>
+		
+    	<next_button>
+			<defaults round_corners="25,25,25,25"/>
+			<tweenIn x="515" y="190" height="35" width="35" time="0.5"  />			
+			<tweenOver tint="0xFFFFFF"  scaleX="1.0" scaleY="1.0"/>
+			<tweenOut tint="0x000000" />
+		</next_button>
+		
+    	<next_symbol>
+		    <tweenIn x="515" y="190" time="0.5"  />	
+			<tweenOver tint="0x000000" />
+		</next_symbol>	
+	</settings>    
+
+	<slides>
+	
+        <slide>
+            <url>http://localhost/cms/application/views/unlimited/img/wellcome.jpg</url>
+        </slide>
+		<!-- changing transition between first & second slide -->
+        <transition num="1" slicing="horizontal" direction="up" shader="flat" delay="0.05" z_multiplier="4"/>
+        <slide>
+       		<url>http://localhost/cms/application/views/unlimited/img/winter.jpg</url>
+        </slide>		
+		<!-- changing transition between second & third slide -->
+        <transition num="1" slicing="horizontal" direction="down" shader="flat" delay="0.05" z_multiplier="4" />
+		<slide>
+            <url>http://localhost/cms/application/views/unlimited/img/fos_pos_for.jpg</url>
+        </slide>
+        <!-- transitions properties defined in transitions template -->
+		<transition num="1" slicing="horizontal" direction="up" shader="flat" delay="0.05" z_multiplier="4" />
+		<slide>
+       		<url>http://localhost/cms/application/views/unlimited/img/coming_soon.jpg</url>
+        </slide>
+		<transition num="1" slicing="horizontal" direction="down" shader="flat" delay="0.05" z_multiplier="4" />
+				
+	</slides>
+</cu3er>
+
