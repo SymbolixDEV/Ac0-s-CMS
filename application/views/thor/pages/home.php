@@ -1,7 +1,7 @@
 <!-- SLIDER START-->
 	
 		<div id="slider">
-			<img src="{base_url}application/views/thor/img/slider/slider_img_1.jpg" class="slider_img" id="slide_1" width="532" height="199" alt="slider-image-1"/>
+			<img src="{base_url}application/views/thor/img/slider/slide1.jpg" class="slider_img" id="slide_1" width="532" height="199" alt="slider-image-1"/>
 			<img src="{base_url}application/views/thor/img/slider/slider_img_2.jpg" class="slider_img" id="slide_2" width="532" height="199" alt="slider-image-2"/>
 			<img src="{base_url}application/views/thor/img/slider/slider_img_3.jpg" class="slider_img" id="slide_3" width="532" height="199" alt="slider-image-3"/>
 			<img src="{base_url}application/views/thor/img/slider/slider_img_4.jpg" class="slider_img" id="slide_4" width="532" height="199" alt="slider-image-4"/>

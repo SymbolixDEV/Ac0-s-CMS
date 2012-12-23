@@ -39,8 +39,8 @@ class Profile extends CI_Controller {
                 $id = $this->session->userdata('id');
                 $this->load->model('profile_model');
                 $cms_userdata = $this->auto->membership($id);
-                $submit = array('name' => 'submit', 'value' => 'Submit', 'class' => 'cool_button');
-				$input_location = array('name' => 'location', 'id' => 'location', 'class' => 'cool_textfield', 'style' => 'width: 300px;', 'value' => $cms_userdata[0]['user_location']);
+                $submit = array('name' => 'submit', 'value' => 'Submit', 'class' => '');
+				$input_location = array('name' => 'location', 'id' => 'location', 'class' => '', 'style' => 'width: 300px;', 'value' => $cms_userdata[0]['user_location']);
 				$genders = array(
 					0 => 'Male',
 					1 => 'Female'
@@ -53,11 +53,11 @@ class Profile extends CI_Controller {
                 $cont .= '<center><table>
 							<tr>
 								<td><span class="member" title="Nickname">Nickname *</span></td>
-								<td align="right">'.form_dropdown('characters', $this->profile_model->return_all_characters($id), $cms_userdata[0]['user_nickname'],'class="cool_textfield" style="width: 300px;"').'</td>
+								<td align="right">'.form_dropdown('characters', $this->profile_model->return_all_characters($id), $cms_userdata[0]['user_nickname'],'class="" style="width: 300px;"').'</td>
 							</tr>
 							<tr>
 								<td><span class="gender_'.$cms_userdata[0]['user_gender'].'" title="Gender">Gender *</span></td>
-								<td align="right">'.form_dropdown('gender', $genders, $cms_userdata[0]['user_gender'],'class="cool_textfield" style="width: 300px;"').'</td>
+								<td align="right">'.form_dropdown('gender', $genders, $cms_userdata[0]['user_gender'],'class="" style="width: 300px;"').'</td>
 							</tr>
 							<tr>
 								<td><label for="location"><span class="location" title="Location">Location</span></label></td>
@@ -88,14 +88,14 @@ class Profile extends CI_Controller {
 					'3' => '<font style="color: red">Cataclysm</font>',
 				);
 				$auth_userdata = $this->profile_model->get_username($id);
-                $submit = array('name' => 'submit', 'value' => 'Submit', 'class' => 'cool_button');
+                $submit = array('name' => 'submit', 'value' => 'Submit', 'class' => '');
                 $cont = "";
                 $cont .= $this->session->flashdata('change_expansion_status');
                 $cont .= form_open('index.php/profile/validate_change_expansion');
                 $cont .= '<center><table>
 							<tr>
 								<td><span class="expansion" title="Expansion">Expansion *</span></td>
-								<td align="right">'.form_dropdown('expansion', $expansions, $auth_userdata['expansion'], 'class="cool_textfield" style="width: 300px;"').'</td>
+								<td align="right">'.form_dropdown('expansion', $expansions, $auth_userdata['expansion'], 'class="" style="width: 300px;"').'</td>
 							</tr>';
                 $cont .= '<tr><td colspan="2" align="right">'.form_submit($submit).'</td></tr></table></center>';
                 $cont .= form_close();
@@ -156,8 +156,8 @@ class Profile extends CI_Controller {
             }  
             else
             {
-                $attributes_paypal_quantity = array('name' => 'quantity', 'id' => 'quantity', 'class' => 'cool_textfield', 'style' => 'width: 300px;', 'value' => '1');
-                $attributes_paypal_submit = array('name' => 'donate_submit', 'id' => 'donate_submit', 'class' => 'cool_button', 'value' => "Donate");
+                $attributes_paypal_quantity = array('name' => 'quantity', 'id' => 'quantity', 'class' => '', 'style' => 'width: 300px;', 'value' => '1');
+                $attributes_paypal_submit = array('name' => 'donate_submit', 'id' => 'donate_submit', 'class' => '', 'value' => "Donate");
 
                 $cont = '';
                 $cont .= '<center><h4>Donate with PayPal</h4>';
@@ -189,10 +189,10 @@ class Profile extends CI_Controller {
             }  
             else
             {
-                $attributes_old_password = array('name' => 'change_password_old_password', 'id' => 'change_password_old_password', 'class' => 'cool_textfield', 'style' => 'width: 300px;');
-                $attributes_new_password = array('name' => 'change_password_new_password', 'id' => 'change_password_new_password', 'class' => 'cool_textfield', 'style' => 'width: 300px;');
-                $attributes_re_new_password = array('name' => 'change_password_re_new_password', 'id' => 'change_password_re_new_password', 'class' => 'cool_textfield', 'style' => 'width: 300px;');
-                $attributes_submit = array('name' => 'register_submit', 'id' => 'register_submit', 'class' => 'cool_button', 'value' => "Change");
+                $attributes_old_password = array('name' => 'change_password_old_password', 'id' => 'change_password_old_password', 'class' => '', 'style' => 'width: 300px;');
+                $attributes_new_password = array('name' => 'change_password_new_password', 'id' => 'change_password_new_password', 'class' => '', 'style' => 'width: 300px;');
+                $attributes_re_new_password = array('name' => 'change_password_re_new_password', 'id' => 'change_password_re_new_password', 'class' => '', 'style' => 'width: 300px;');
+                $attributes_submit = array('name' => 'register_submit', 'id' => 'register_submit', 'class' => '', 'value' => "Change");
                 $cont = '<center><br /><br /><table>';
                 $cont .= form_open(base_url('index.php/profile/validation_change_password'));
                 $cont .= $this->session->flashdata('change_password_status');

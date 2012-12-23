@@ -16,7 +16,7 @@ class Acp_donate extends CI_Model
             $cont = '';
             foreach ($query->result_array() as $row)
             {
-                $cont .= '<div class="menage_news"><div class="content"><div class="news_id">'.$row['id'].'</div><div class="news_title"><a href="http://www.wowhead.com/item='.$row['entry'].'" class="q'.$row['quality'].'">'.$row['name'].'</a></div><div class="news_options"><a class="edit" href="'.base_url('index.php/acp/donate/index/edit/'.$row['id']).'">Edit</a> - <a class="delete" href="'.base_url('index.php/acp/donate/index/delete/'.$row['id']).'">Delete</a></div><div class="clear"></div></div></div>';
+                $cont .= '<div class="menage_news"><div class="content"><div class="news_id">'.$row['id'].'</div><div class="news_title"><a href="http://wotlk.openwow.com/?item='.$row['entry'].'" class="q'.$row['quality'].'">'.$row['name'].'</a></div><div class="news_options"><a class="edit" href="'.base_url('index.php/acp/donate/index/edit/'.$row['id']).'">Edit</a> - <a class="delete" href="'.base_url('index.php/acp/donate/index/delete/'.$row['id']).'">Delete</a></div><div class="clear"></div></div></div>';
             }
             
             return $cont;

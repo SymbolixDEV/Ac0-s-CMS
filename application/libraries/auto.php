@@ -134,7 +134,7 @@ class Auto {
         $cont .= '<meta http-equiv="content-type" content="text/html;charset=utf-8" />';
         $cont .= '<link rel="shortcut icon" href="'.base_url('content/img/favicon.ico').'" type="image/x-icon">';
         $cont .= '<link rel="stylesheet" type="text/css" href="'.base_url('content/css/default_style.css').'" />';
-        $cont .= '<script type="text/javascript" src="'.base_url('content/js/jquery.js').'"></script>';
+        $cont .= '<script type="text/javascript" src="http://code.jquery.com/jquery-1.8.3.min.js"></script>';
 		$cont .= '<script type="text/javascript" src="'.base_url('content/js/core.js').'"></script>';
         $cont .= '<script type="text/javascript" src="'.base_url('content/js/tooltip.js').'"></script>';
 		$cont .= '<script type="text/javascript" src="'.base_url('content/js/main.js').'"></script>';

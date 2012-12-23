@@ -425,7 +425,7 @@ class Tools_model extends CI_Model
 				$this->characters->select('arenaTeamId, name, seasonGames, seasonWins, captainGuid, rating');
 			elseif($core == 'oregon')
 			{
-				$this->characters->select('arena_team.arenaTeamId, name, seasonGames, seasonWins, captainGuid, rating');
+				$this->characters->select('arena_team.arenaTeamId as arenaTeamId, arena_team.name as name, arena_team_stats.games as seasonGames, arena_team_stats.wins as seasonWins, arena_team.captainguid as captainGuid, arena_team_stats.rating as rating');
 				$this->characters->join('arena_team_stats', 'arena_team_stats.arenateamid = arena_team.arenaTeamId');
 			}
 			$this->characters->where('name !=', '');
@@ -445,7 +445,8 @@ class Tools_model extends CI_Model
 				   $cont[$i]['arena_captain_guid'] = $row['captainGuid'];
                    $cont[$i]['arena_rating'] = $row['rating'];
 				   $cont[$i]['arena_combo'] = $this->get_arena_combo($characters_db, $row['arenaTeamId']);
-				   $cont[$i]['arena_mmr'] = $this->get_mmr($characters_db, $row['arenaTeamId']);
+				   if($core == 'trinity')
+					$cont[$i]['arena_mmr'] = $this->get_mmr($characters_db, $row['arenaTeamId']);
 				   $cont[$i]['arena_wins'] = $row['seasonWins'];
 				   $cont[$i]['arena_loses'] = $row['seasonGames'] - $row['seasonWins'];
                 }

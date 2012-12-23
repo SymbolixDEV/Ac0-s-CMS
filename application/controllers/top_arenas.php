@@ -25,12 +25,13 @@ class Top_arenas extends CI_Controller {
             $this->load->model('tools_model');
             $char_db = $this->tools_model->select_realm_char_db($realm);
 			$core = $this->tools_model->select_realm_core($realm);
-            return $this->center_content($this->tools_model->show_top_arenas($char_db, $core, $type), $realm);
+            return $this->center_content($this->tools_model->show_top_arenas($char_db, $core, $type), $realm, $core);
         }
         
-        function center_content($players, $realm)
+        function center_content($players, $realm, $core)
         {
-            $cont = '
+			if($core == 'trinity')
+				$cont = '
                         <table width="100%">
                         <tr>
                             <th></th>
@@ -39,6 +40,18 @@ class Top_arenas extends CI_Controller {
                             <th class="aleft">Rating</th>
                             <th class="aleft">Combo</th>
 							<th class="aleft">MMR</th>
+							<th class="aleft">Win</th>
+							<th class="aleft">Lose</th>
+                        </tr>';
+			elseif($core == 'oregon')
+				$cont = '
+                        <table width="100%">
+                        <tr>
+                            <th></th>
+                            <th class="aleft">Team Name</th>
+                            <th class="aleft">Captain</th>
+                            <th class="aleft">Rating</th>
+                            <th class="aleft">Combo</th>
 							<th class="aleft">Win</th>
 							<th class="aleft">Lose</th>
                         </tr>';
@@ -53,8 +66,11 @@ class Top_arenas extends CI_Controller {
 							foreach ($player['arena_combo'] as $member)
 								$cont .= '<a href="'.base_url('index.php/character/index/'.$member['guid'].'/'.$realm).'">'.$member['icon'].'</a> &nbsp; ';
 							
-							$cont .= '</td>
-							<td>'.$player['arena_mmr'].'</td>
+							$cont .= '</td>';
+							if($core == 'trinity')
+								$cont .= '<td>'.$player['arena_mmr'].'</td>';
+								
+							$cont .= '
 							<td>'.$player['arena_wins'].'</td>
 							<td>'.$player['arena_loses'].'</td>
                         </tr>';

@@ -36,7 +36,7 @@ a:hover {
 	position:relative;	
 }
 
-input[type=text], input[type=password] { 
+input[type=text], input[type=password]{ 
 	background:none;
 	border:none;
 	outline:none;
@@ -89,20 +89,28 @@ textarea:hover, textarea:focus {
 	transition:.1s;
 }
 
-input[type=submit], input[type=button] { 
+input[type=submit], input[type=button], select { 
 	background:none;
 	border:none;
 	outline:none;
 	min-width:80px;
 	height:30px;
-	background-image:url('../img/input-bg.jpg'); 
+	background-image: #013443 url('../img/input-bg.jpg'); 
 	padding-left:10px;
 	color:#a1a1a1;
 	text-shadow:1px 1px #000;
 	border:1px solid #000;
 }
-
-input[type=submit]:hover, input[type=button]:hover { 
+select { 
+	text-shadow:none;
+}
+.cool_button {
+	background-image: url('../img/left-box-header.jpg')!important;
+	border: none!important;
+	border-right: 1px solid #000!important;
+	border-bottom: 1px solid #000!important;
+}
+input[type=submit]:hover, input[type=button]:hover, select:hover { 
 	-moz-box-shadow: 0 0 1px 1px #01171d;
 	-webkit-box-shadow: 0 0 1px 1px #01171d;
 	box-shadow: 0 0 1px 1px #01171d;
@@ -114,7 +122,7 @@ input[type=submit]:hover, input[type=button]:hover {
 	transition:.1s;
 }
 
-input[type=submit]:active, input[type=button]:active { 
+input[type=submit]:active, input[type=button]:active, select:active { 
 	-moz-box-shadow: inset 0 0 4px 4px #01171d;
 	-webkit-box-shadow: inset 0 0 4px 4px #01171d;
 	box-shadow: inset 0 0 4px 4px #01171d;
@@ -429,4 +437,146 @@ height:60px;
 .realm:hover div.bonus {
 	display: block;
 	visibility: visible;
+}
+
+.forum_menu {
+	background: #013545; 
+	float: left;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 32px;
+}
+.forum_menu li {
+	float: left;
+	font: 12px "Arial Black";
+	margin: 0;
+	padding: 0;
+}
+.forum_menu a {
+	background: #dfdfdf; 
+	display: block;
+	float: left;
+	margin: 0;
+	padding: 8px 12px;
+	padding-right: 25px;
+	text-decoration: none;
+	font-weight:normal;
+	background: url('../img/delimeter.png') right top no-repeat;
+}
+.forum_menu a.last {
+	background: none;
+}
+
+.forum_menu a:link, .forum_menu a:visited{
+	
+}
+
+.forum_menu a:hover {
+	
+}
+
+.forum_content .first {
+	background-color:#013545;
+	padding: 10px 0 10px 0;
+}
+.forum_content .first .td_header {
+	padding: 0 20px 0 20px;
+	font-weight: bold;
+}
+.forum_content .active {
+	font-weight: bold;
+}
+.post_content .thread .mod_links, .forum_content .thread .mod_links {
+	float: right;
+	visibility: hidden;
+	display: none;
+}
+.post_content .thread:hover .mod_links, .forum_content .thread:hover .mod_links {
+	float: right;
+	visibility: visible;
+	display: inline;
+}
+.forum_content .forum_description {
+	font-style: italic;
+}
+.forum_content .first .latest {
+	font-weight: bold;
+	float:right;
+	padding: 0 110px 0 0;
+}
+.forum_content {
+	width: 100%;
+	float:left;
+	padding: 10px 0 10px 0;
+	min-height:50px;
+}
+.forum_content .last_overflowed {
+	width: 200px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.forum_content a{
+}
+.forum_content .td {
+	padding: 0 20px 0 20px;
+}
+.forum_content .td2{
+	padding: 0 20px 0 0;
+}
+.forum_content .td3{
+	padding: 20px 20px 20px 20px;
+}
+
+.forum_content .dotted{
+	border-bottom: 1px dotted #FFF; 
+}
+.post_content {
+	width: 100%; 
+	border: 1px solid #E0E0E0;
+	min-height:50px;
+	float: left;
+}
+.post_content .post_container {
+	text-align: left;
+	width: 465px;
+	margin: 15px 0 15px 0;
+}
+.post_content .post_input {
+	width: 450px;
+	min-width: 450px;
+	max-width: 450px;
+	min-height: 150px;
+	max-height: 450px;
+	height: 150px;
+	margin: 0;
+	vertical-align:text-top;
+}
+.post_content td {
+	border: 1px solid #E0E0E0;
+}
+.post_content .table_title {
+	padding: 10px 10px 10px 10px;
+	font-weight: bold;
+}
+
+.post_content .table_user {
+	padding: 5px 10px 5px 10px;
+	font-weight: bold;
+}
+
+.post_content .table_text {
+	text-align: justify;
+	vertical-align:text-top;
+	padding: 10px 10px 10px 10px;
+}
+.post_content .hr_line { 
+	border-top: 1px dotted #B0B0B0; 
+	width: 100%; 
+	padding: 2px;
+}
+.post_content .post_user_content {
+	margin: 10px;
 }

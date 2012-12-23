@@ -158,7 +158,7 @@ class Profile_model extends CI_Model
             $cont .= $this->session->flashdata('invalid_option');
             $cont .= $this->show_realms($realm_id, 'index.php/profile/'.$type.'_shop/');
             $cont .= $this->return_rewards($realm_id, $type);
-            $attributes_submit = array('name' => 'purchase_submit', 'id' => 'purchase_submit', 'class' => 'cool_button', 'value' => "Purchase");
+            $attributes_submit = array('name' => 'purchase_submit', 'id' => 'purchase_submit', 'class' => '', 'value' => "Purchase");
             $cont .= '<br />'.$this->return_character_menu($realm_info['char_db']).' &nbsp;<span style="padding-top:2px;">'.form_submit($attributes_submit).'</span>';
             $cont .= form_close();
             
@@ -204,7 +204,7 @@ class Profile_model extends CI_Model
 
                 foreach ($query->result_array() as $row)
                 {
-                    $link = ($row['custom']==0) ? 'href="http://www.wowhead.com/item='.$row['entry'].'" ' : '';
+                    $link = ($row['custom']==0) ? 'href="http://wotlk.openwow.com/?item='.$row['entry'].'" ' : '';
                     $cont .= '<tr>';
                     $cont .= '<td><a '.$link.' class="q'.$row['quality'].'">'.$row['name'].'</a>';
                     $cont .= '<td>'.$row['description'].'</td>';
@@ -438,7 +438,7 @@ class Profile_model extends CI_Model
                 }
             }
 
-            $class = ' class="cool_textfield" ';
+            $class = ' class="" ';
             return form_dropdown('character', $options, '', $class);
         }
 }

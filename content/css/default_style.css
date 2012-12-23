@@ -19,9 +19,9 @@ img { border:none; }
 .q8, .q8 a { color: #ffff98; }
 .icon { padding-left:18px;background:url(../img/icon/sockets/socket-meta.gif) no-repeat left center }
 
-.fail{margin:5px 0px;border:1px solid #c82820;color:#c82820;font-family:"Arial", Arial, sans-serif;font-size:12px;font-weight:700;background:#e7928d;padding:5px;border-radius:3px;-moz-border-radius:3px;-webkit-border-radius: 3px;}
-.success{margin:5px 0px;border:1px solid #b2dc4d;color:#40550d;font-family:"Arial", Arial, sans-serif;font-size:12px;background:#cce297;font-weight:700;padding:5px;border-radius:3px;-moz-border-radius:3px;-webkit-border-radius: 3px;}
-.warning{margin:5px 0px;border:1px solid #efdc90;color:#a9a014;font-family:"Arial", Arial, sans-serif;font-size:12px;font-weight:700;background:#fffecc;padding:5px;border-radius:3px;-moz-border-radius:3px;-webkit-border-radius: 3px;}
+.fail{text-shadow: none!important;margin:5px 0px;border:1px solid #c82820;color:#c82820;font-family:"Arial", Arial, sans-serif;font-size:12px;font-weight:700;background:#e7928d;padding:5px;border-radius:3px;-moz-border-radius:3px;-webkit-border-radius: 3px;}
+.success{text-shadow: none!important;margin:5px 0px;border:1px solid #b2dc4d;color:#40550d;font-family:"Arial", Arial, sans-serif;font-size:12px;background:#cce297;font-weight:700;padding:5px;border-radius:3px;-moz-border-radius:3px;-webkit-border-radius: 3px;}
+.warning{text-shadow: none!important;margin:5px 0px;border:1px solid #efdc90;color:#a9a014;font-family:"Arial", Arial, sans-serif;font-size:12px;font-weight:700;background:#fffecc;padding:5px;border-radius:3px;-moz-border-radius:3px;-webkit-border-radius: 3px;}
 
 .ico_cancel{text-align:left;padding-left:20px;background:url(../img/cancel.png) no-repeat left center}
 .ico_accept{text-align:left;padding-left:20px;background:url(../img/accept.png) no-repeat left center}

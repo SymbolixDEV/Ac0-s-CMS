@@ -11,9 +11,9 @@
 <div id="navbar">
 	<div class="wrapper">
 		<ul class="menu">
-			<li style="border-left:1px solid #002630;"><a href="{base_url}index.php">{lang_home}</a></li>
+			<a href="{base_url}index.php"><li style="border-left:1px solid #002630;">{lang_home}</li></a>
 			{not_logged2}
-				<li><a href="{base_url}index.php/register" class="parent"><span>{lang_account}</span></a>
+				<li><a href="{base_url}index.php/register"><span>{lang_account}</span></a>
 					<div style="left: 0;"><ul>
 						<li><a href="{base_url}index.php/register"><span>{lang_register_account}</span></a></li>
 						<li><a href="{base_url}index.php/forget"><span>{lang_forgot_password}</span></a></li>
@@ -51,39 +51,39 @@
 				</li>
 			{/logged2}
 			<li><a href="#" class="parent"><span>{lang_status}</span></a>
-						<div style="left: 0;"><ul>
-							{realms}
-								<li><a href="{link}"><span>{name}</span></a></li>
-							{/realms}
-						</ul></div>
-					</li>
-					<li><a href="{base_url}index.php/forum"><span>{lang_forum}</span></a></li>
-					<li><a href="#"><span>{lang_tools}</span></a>
-						<div style="left: 0;"><ul>
-							{realms_tools}
-								<li><a href="#" class="parent"><span>{name}</span></a>
+				<div style="left: 0;"><ul>
+					{realms}
+						<li><a href="{link}"><span>{name}</span></a></li>
+					{/realms}
+				</ul></div>
+			</li>
+			<li><a href="{base_url}index.php/forum">{lang_forum}</a></li>
+			<li><a href="#"><span>{lang_tools}</span></a>
+				<div style="left: 0;"><ul>
+					{realms_tools}
+						<li><a href="#" class="parent"><span>{name}</span></a>
+							<div style="left: 0;"><ul>
+								<li><a href="#" class="parent"><span>Top Arena Teams</span></a>
 									<div style="left: 0;"><ul>
-											<li><a href="#" class="parent"><span>Top Arena Teams</span></a>
-												<div style="left: 0;"><ul>
-													<li><a href="{base_url}index.php/top_arenas/index/2/{id}"><span>2v2</span></a></li>
-													<li><a href="{base_url}index.php/top_arenas/index/3/{id}"><span>3v3</span></a></li>
-													<li><a href="{base_url}index.php/top_arenas/index/5/{id}"><span>5v5</span></a></li>
-												</ul></div>
-											</li>
-											<li><a href="{top_link}"><span>Top Killers</span></a></li>
-											<li><a href="{char_ban_link}"><span>Character Ban List</span></a></li>
+										<li><a href="{base_url}index.php/top_arenas/index/2/{id}"><span>2v2</span></a></li>
+										<li><a href="{base_url}index.php/top_arenas/index/3/{id}"><span>3v3</span></a></li>
+										<li><a href="{base_url}index.php/top_arenas/index/5/{id}"><span>5v5</span></a></li>
 									</ul></div>
 								</li>
-							{/realms_tools}
-							<li><a href="#" class="parent"><span>Ban Lists</span></a>
-								<div style="left: 0;"><ul>
-									<li><a href="{base_url}index.php/bans/account"><span>Account</span></a></li>
-									<li><a href="{base_url}index.php/bans/ip"><span>IP</span></a></li>
-								</ul></div>
-							</li>
+								<li><a href="{top_link}"><span>Top Killers</span></a></li>
+								<li><a href="{char_ban_link}"><span>Character Ban List</span></a></li>
+							</ul></div>
+						</li>
+					{/realms_tools}
+					<li><a href="#" class="parent"><span>Ban Lists</span></a>
+						<div style="left: 0;"><ul>
+							<li><a href="{base_url}index.php/bans/account"><span>Account</span></a></li>
+							<li><a href="{base_url}index.php/bans/ip"><span>IP</span></a></li>
 						</ul></div>
 					</li>
-					<li class="last"><a href="{base_url}index.php/how"><span>{lang_how_to_connect}</span></a></li>
+				</ul></div>
+			</li>
+			<a href="{base_url}index.php/how"><li class="last"><span>{lang_how_to_connect}</span></li></a>
 		</ul>
 	</div>
 </div>
@@ -100,6 +100,7 @@
 </div>
 
 <div class="wrapper" id="body">
+	{full_content_false}
 	<div id="left-body">
 		{not_logged}
 			<div class="left-box">
@@ -205,7 +206,7 @@
 		</div>
 		<!-- INFO BOX END -->
 	</div>
-	
 	<div id="right-body">
+	{/full_content_false}
 	<!-- SLIDER START-->
 	

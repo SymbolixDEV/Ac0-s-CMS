@@ -237,7 +237,13 @@ class Forum_model extends CI_Model
 
             $query = $this->auth->get('account_access', 1);
 			
-			return ($query->num_rows() > 0) ? $query->row_array()['gmlevel'] : 0;
+			if($query->num_rows() > 0)
+			{
+				$row = $query->row_array();
+				return $row['gmlevel'];
+			}
+			else 
+				return 0;
         }
 		
 		function check_account_bann($id)
@@ -262,17 +268,19 @@ class Forum_model extends CI_Model
 			if($in_game_rank != 0)
 			{
 				$i++;
-				$cont[$i] = array( 'name' => $this->config->item('in_game_ranks')[$in_game_rank][0], 'img' => base_url('content/img/ranks/in_game/'.$this->config->item('in_game_ranks')[$in_game_rank][1]));
+				$in_game_ranks = $this->config->item('in_game_ranks');
+				$cont[$i] = array( 'name' => $in_game_ranks[$in_game_rank][0], 'img' => base_url('content/img/ranks/in_game/'.$in_game_ranks[$in_game_rank][1]));
 			}
 			
 			if($web_ranks != 0)
 			{
 				$i++;
-				$cont[$i] = array( 'name' => $this->config->item('web_ranks')[$web_ranks][0], 'img' => base_url('content/img/ranks/web/'.$this->config->item('web_ranks')[$web_ranks][1]));
+				$config_web_ranks = $this->config->item('web_ranks');
+				$cont[$i] = array( 'name' => $config_web_ranks[$web_ranks][0], 'img' => base_url('content/img/ranks/web/'.$config_web_ranks[$web_ranks][1]));
 			}
 			
 			if($i == 0)
-				$cont[$i] = array( 'name' => $this->config->item('web_ranks')[0][0], 'img' => base_url('content/img/ranks/web/'.$this->config->item('web_ranks')[0][1]));
+				$cont[$i] = array( 'name' => $config_web_ranks[0][0], 'img' => base_url('content/img/ranks/web/'.$config_web_ranks[0][1]));
 			
 			return $cont;
 		}

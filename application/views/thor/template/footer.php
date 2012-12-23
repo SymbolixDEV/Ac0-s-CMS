@@ -1,5 +1,6 @@
-
+	{full_content_false}
 	</div>
+	{/full_content_false}
 </div>
 
 <div class="wrapper" id="footer">
